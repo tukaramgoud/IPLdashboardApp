@@ -1,11 +1,13 @@
 // Write your code here
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 import TeamCard from '../TeamCard'
 import './index.css'
+// import {match} from 'assert'
 // import { async } from 'fast-glob'/\
 
 class Home extends Component {
-  state = {matches: []}
+  state = {matches: [], isLoading: true}
 
   componentDidMount = () => {
     this.getMatches()
@@ -21,13 +23,13 @@ class Home extends Component {
       name: eachOne.name,
       teamImageUrl: eachOne.team_image_url,
     }))
-    console.log(newResult)
 
-    this.setState({matches: newResult})
+    this.setState({matches: newResult, isLoading: false})
   }
 
   render() {
-    const {matches} = this.state
+    const {matches, isLoading} = this.state
+
     return (
       <div className="home-container">
         <div className="heading-container">
@@ -39,9 +41,13 @@ class Home extends Component {
           <h1 className="heading">IPL Dashboard</h1>
         </div>
         <div className="matches-container">
-          {matches.map(eachOne => (
-            <TeamCard matchDetails={this.eachOne} key={eachOne.id} />
-          ))}
+          {isLoading ? (
+            <Loader type="Oval" color="#ffffff" height={50} />
+          ) : (
+            matches.map(eachOne => (
+              <TeamCard matchDetails={eachOne} key={eachOne.id} />
+            ))
+          )}
         </div>
       </div>
     )
