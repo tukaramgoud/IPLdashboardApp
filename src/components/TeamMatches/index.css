@@ -19,23 +19,9 @@
 .first-heading {
   align-self: flex-start;
 }
-.latest-matches-container {
-  background-color: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
+
+.last-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-}
-.one {
-  width: 35%;
-}
-.two {
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.image-logo {
-  height: 200px;
 }

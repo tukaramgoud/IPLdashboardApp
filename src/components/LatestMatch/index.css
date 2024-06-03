@@ -1,1 +1,21 @@
 /* Write your CSS here */
+.latest-matches-container {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.one {
+  width: 35%;
+}
+.two {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-logo {
+  height: 200px;
+}

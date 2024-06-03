@@ -1,5 +1,7 @@
 // Write your code here
 import {Component} from 'react'
+import LatestMatch from '../LatestMatch'
+import MatchCard from '../MatchCard'
 import './index.css'
 
 class TeamMatches extends Component {
@@ -61,27 +63,12 @@ class TeamMatches extends Component {
         </div>
         <div className="new">
           <h1 className="first-heading">Latest Matches</h1>
-          <div className="latest-matches-container">
-            <div className="one">
-              <h1>{latestMatchDetails.competingTeam}</h1>
-              <h1>{latestMatchDetails.date}</h1>
-              <h1>{latestMatchDetails.venue}</h1>
-              <h1>{latestMatchDetails.result}</h1>
-            </div>
-            <div className="two">
-              <img
-                src={latestMatchDetails.competingTeamLogo}
-                alt={latestMatchDetails.competingTeam}
-                className="image-logo"
-              />
-            </div>
-            <div className="one">
-              <h1>{latestMatchDetails.competingTeam}</h1>
-              <h1>{latestMatchDetails.date}</h1>
-              <h1>{latestMatchDetails.venue}</h1>
-              <h1>{latestMatchDetails.result}</h1>
-            </div>
-          </div>
+          <LatestMatch latestMatchDetails={latestMatchDetails} />
+        </div>
+        <div className="last-container">
+          {recentMatches.map(one => (
+            <MatchCard latestMatchDetails={one} key={one.id} />
+          ))}
         </div>
       </div>
     )
