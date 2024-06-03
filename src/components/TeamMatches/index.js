@@ -3,6 +3,8 @@ import {Component} from 'react'
 import './index.css'
 
 class TeamMatches extends Component {
+  state = {matchDetails: [], isLoading: true}
+
   componentDidMount = () => {
     this.fetchEachMatchDetails()
   }
@@ -14,7 +16,7 @@ class TeamMatches extends Component {
 
     const fetchData = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const result = await fetchData.json()
-    console.log(result)
+    // console.log(result)
 
     const newResult = {
       latestMatchDetails: {
@@ -44,13 +46,43 @@ class TeamMatches extends Component {
       })),
       url: result.team_banner_url,
     }
-    console.log(newResult)
+    // console.log(newResult)
+    this.setState({matchDetails: newResult, isLoading: false})
   }
 
   render() {
-    return (
-      <div>
-        <h1>hello world</h1>
+    const {matchDetails, isLoading} = this.state
+    console.log(matchDetails)
+    const {latestMatchDetails, recentMatches, url} = matchDetails
+    return isLoading ? null : (
+      <div className="sub-main-container">
+        <div>
+          <img src={url} alt="some" className="image-sizing" />
+        </div>
+        <div className="new">
+          <h1 className="first-heading">Latest Matches</h1>
+          <div className="latest-matches-container">
+            <div className="one">
+              <h1>{latestMatchDetails.competingTeam}</h1>
+              <h1>{latestMatchDetails.date}</h1>
+              <h1>{latestMatchDetails.venue}</h1>
+              <h1>{latestMatchDetails.result}</h1>
+            </div>
+            <div className="two">
+              <img
+                src={latestMatchDetails.competingTeamLogo}
+                alt={latestMatchDetails.competingTeam}
+                className="image-logo"
+              />
+            </div>
+            <div className="one">
+              <h1>{latestMatchDetails.competingTeam}</h1>
+              <h1>{latestMatchDetails.date}</h1>
+              <h1>{latestMatchDetails.venue}</h1>
+              <h1>{latestMatchDetails.result}</h1>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

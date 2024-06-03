@@ -1,1 +1,41 @@
 /* Write your CSS here */
+.sub-main-container {
+  background-image: linear-gradient(to bottom, #a4261d, #0f172a);
+  min-height: 100vh;
+  padding: 10px;
+  display: flex;
+  padding-left: 20%;
+  padding-right: 20%;
+  flex-direction: column;
+}
+.image-sizing {
+  width: 100%;
+  height: 40vh;
+}
+.new {
+  display: flex;
+  flex-direction: column;
+}
+.first-heading {
+  align-self: flex-start;
+}
+.latest-matches-container {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.one {
+  width: 35%;
+}
+.two {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-logo {
+  height: 200px;
+}
