@@ -1,5 +1,7 @@
 // Write your code here
+
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
 import './index.css'
@@ -56,20 +58,28 @@ class TeamMatches extends Component {
     const {matchDetails, isLoading} = this.state
     console.log(matchDetails)
     const {latestMatchDetails, recentMatches, url} = matchDetails
-    return isLoading ? null : (
+    return (
       <div className="sub-main-container">
-        <div>
-          <img src={url} alt="some" className="image-sizing" />
-        </div>
-        <div className="new">
-          <h1 className="first-heading">Latest Matches</h1>
-          <LatestMatch latestMatchDetails={latestMatchDetails} />
-        </div>
-        <div className="last-container">
-          {recentMatches.map(one => (
-            <MatchCard latestMatchDetails={one} key={one.id} />
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="loader">
+            <Loader type="Oval" color="#ffffff" height={50} />
+          </div>
+        ) : (
+          <>
+            <div>
+              <img src={url} alt="some" className="image-sizing" />
+            </div>
+            <div className="new">
+              <h1 className="first-heading">Latest Matches</h1>
+              <LatestMatch latestMatchDetails={latestMatchDetails} />
+            </div>
+            <div className="last-container">
+              {recentMatches.map(one => (
+                <MatchCard latestMatchDetails={one} key={one.id} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     )
   }

@@ -6,10 +6,10 @@ const LatestMatch = props => {
   return (
     <div className="latest-matches-container">
       <div className="one">
-        <h1>{latestMatchDetails.competingTeam}</h1>
-        <h1>{latestMatchDetails.date}</h1>
-        <h1>{latestMatchDetails.venue}</h1>
-        <h1>{latestMatchDetails.result}</h1>
+        <h1 className="heading">{latestMatchDetails.competingTeam}</h1>
+        <h1 className="heading">{latestMatchDetails.date}</h1>
+        <h1 className="heading">{latestMatchDetails.venue}</h1>
+        <h1 className="heading">{latestMatchDetails.result}</h1>
       </div>
       <div className="two">
         <img
@@ -19,10 +19,19 @@ const LatestMatch = props => {
         />
       </div>
       <div className="one">
-        <h1>{latestMatchDetails.competingTeam}</h1>
-        <h1>{latestMatchDetails.date}</h1>
-        <h1>{latestMatchDetails.venue}</h1>
-        <h1>{latestMatchDetails.result}</h1>
+        <h1 className="heading">
+          first Innings <br /> {latestMatchDetails.firstInnings}
+        </h1>
+        <h1 className="heading">
+          second Innings
+          <br /> {latestMatchDetails.secondInnings}
+        </h1>
+        <h1 className="heading">
+          Man of the Match <br /> {latestMatchDetails.manOfTheMatch}
+        </h1>
+        <h1 className="heading">
+          Umpires <br /> {latestMatchDetails.umpires}
+        </h1>
       </div>
     </div>
   )

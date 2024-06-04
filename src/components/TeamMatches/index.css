@@ -18,10 +18,21 @@
 }
 .first-heading {
   align-self: flex-start;
+  font-family: Bree serif;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .last-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

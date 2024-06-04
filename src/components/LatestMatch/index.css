@@ -19,3 +19,10 @@
 .image-logo {
   height: 200px;
 }
+.heading {
+  font-family: Bree serif;
+  text-align: center;
+  color: white;
+  font-size: 23px;
+  font-weight: 400;
+}

@@ -8,7 +8,7 @@ class TeamCard extends Component {
     const {matchDetails} = this.props
     const {teamImageUrl, name, id} = matchDetails
     return (
-      <Link to={`/matches/${id}`}>
+      <Link to={`/matches/${id}`} className="nav-link">
         <div className="teamCard-container">
           <img src={teamImageUrl} alt={name} className="logo-sizing" />
           <h1 className="team-card-heading">{name}</h1>

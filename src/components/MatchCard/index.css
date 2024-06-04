@@ -13,3 +13,15 @@
 .logo {
   height: 100px;
 }
+
+.para {
+  color: white;
+  font-family: Bree serif;
+  text-align: center;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
